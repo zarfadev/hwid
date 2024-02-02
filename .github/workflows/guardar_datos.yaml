@@ -1,1 +1,18 @@
+name: guardar_datos
 
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  guardar_datos_job:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout del código
+        uses: actions/checkout@v2
+
+      - name: Ejecutar script para guardar datos
+        run: |
+          # Aquí va el script que guarda los datos en el repositorio
