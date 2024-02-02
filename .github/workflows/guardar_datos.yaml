@@ -15,4 +15,10 @@ jobs:
 
       - name: Ejecutar script para guardar datos
         run: |
-          # Aquí va el script que guarda los datos en el repositorio
+          echo "Guardando datos en el archivo..."
+          echo "Nuevos datos" >> datos.txt
+          git config --global user.email "actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add datos.txt
+          git commit -m "Actualizar datos"
+          git push
