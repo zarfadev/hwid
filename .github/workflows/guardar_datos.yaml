@@ -15,10 +15,12 @@ jobs:
 
       - name: Ejecutar script para guardar datos
         run: |
-          echo "Guardando datos en el archivo..."
-          echo "Nuevos datos" >> datos.txt
-          git config --global user.email "actions@github.com"
-          git config --global user.name "GitHub Actions"
-          git add datos.txt
-          git commit -m "Actualizar datos"
+          # Aquí va el script que guarda los datos en el repositorio
+          # Usa el token de acceso personal para autenticarte
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
+          git add .
+          git commit -m "Guardar datos"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
